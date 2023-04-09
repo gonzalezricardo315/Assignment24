@@ -1,5 +1,6 @@
 package com.example.assignment2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,7 +17,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val btnOpen: Button = findViewById(R.id.btnOpenActivity)
+        btnOpen.setOnClickListener{
+            Intent(this, SecondActivity::class.java).also {
+                startActivity(it)
+            }
+        }
     }
+
+
 
     fun numAction(view: View) {
         val calcId: EditText = findViewById(R.id.calc)
